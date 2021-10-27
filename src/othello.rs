@@ -122,7 +122,8 @@ impl OthelloApp {
     pub fn play_ai(&mut self) {
         let board = moai::BitBoard::from_strings(self.board.to_strings(), self.board.player);
         let mut mcts = moai::MCTS::new(1.0, 1);
-        let (position, _count) = mcts.run(board, 1000);
+        let (position, count) = mcts.run(board, 1000);
+        println!("{}", count);
         let (mut x, mut y) = (0, 0);
         for i in 0..64 {
             if position & (1 << i) != 0 {
