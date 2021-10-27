@@ -13,7 +13,7 @@ crate-type = ["cdylib", "rlib"]
 eframe = "0.15.0" # Gives us egui, epi and web+native backends
 getrandom = {version = "0.2", features = ["js"]} 
 rand = "0.8.4" 
-time = "0.2.26" 
+wasm-timer = "0.2.5" 
 
 serde = {version = "1", features = ["derive"], optional = true}
 

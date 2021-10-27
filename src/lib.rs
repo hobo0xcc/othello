@@ -4,6 +4,8 @@ mod app;
 pub use app::TemplateApp;
 pub mod othello;
 
+extern crate wasm_timer;
+
 // ----------------------------------------------------------------------------
 // When compiling for web:
 

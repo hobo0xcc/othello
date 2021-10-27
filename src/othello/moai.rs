@@ -2,7 +2,8 @@ use rand::{prelude, Rng};
 use std::collections::{HashMap, VecDeque};
 use std::io;
 use std::ops::{Shl, Shr};
-use std::time::{Duration, Instant};
+use wasm_timer::Instant;
+// use std::time::{Duration, Instant};
 
 fn vertical_mirror(x: i64) -> i64 {
     x.swap_bytes()
