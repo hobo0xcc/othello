@@ -5,6 +5,17 @@ pub use app::TemplateApp;
 pub mod othello;
 
 extern crate wasm_timer;
+#[cfg(target_arch = "wasm32")]
+extern crate web_sys;
+
+// A macro to provide `println!(..)`-style syntax for `console.log` logging.
+#[macro_export]
+#[cfg(target_arch = "wasm32")]
+macro_rules! log {
+    ( $( $t:tt )* ) => {
+        web_sys::console::log_1(&format!( $( $t )* ).into());
+    }
+}
 
 // ----------------------------------------------------------------------------
 // When compiling for web:

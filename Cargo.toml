@@ -17,6 +17,12 @@ wasm-timer = "0.2.5"
 
 serde = {version = "1", features = ["derive"], optional = true}
 
+[dependencies.web-sys]
+features = [
+  "console",
+]
+version = "0.3"
+
 [features]
 default = []
 persistence = ["eframe/persistence", "serde"] # Enable if you want to persist app state on shutdown
